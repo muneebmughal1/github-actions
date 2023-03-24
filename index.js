@@ -1,0 +1,16 @@
+const app = require('express')();
+const bodyParser = require('body-parser');
+
+const PORT = 4000;
+app.use(bodyParser.json());
+
+app.post('/api', async (req, res) => {
+    res.status(200).json({
+        status: true,
+        message: 'Hi World'
+    })
+})
+
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`)
+})
