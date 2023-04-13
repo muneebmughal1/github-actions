@@ -28,7 +28,7 @@ jobs:
         run: npm i
 
       - name: Zip deployment package
-        run: zip -r deployment-package.zip /path/to/deployment/package
+        run: zip -r deployment-package.zip . -i /path/to/deployment/package
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v14
