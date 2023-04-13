@@ -38,5 +38,5 @@ jobs:
           application_name: ${{ env.EB_APP_NAME }}
           environment_name: ${{ env.EB_ENV_NAME }}
           region: ${{ env.AWS_REGION }}
-          version_label: Sample
+          version_label: Sample-${{ github.sha }}
           deployment_package: deployment-package.zip
