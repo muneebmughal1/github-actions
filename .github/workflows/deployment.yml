@@ -10,7 +10,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   EB_APP_NAME: muneeb-node-app
-  EB_ENV_NAME: example_node_env
+  EB_ENV_NAME: muneeb-node-env
 
 jobs:
   build-and-deploy:
