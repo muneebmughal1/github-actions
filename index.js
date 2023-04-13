@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.post('/api', async (req, res) => {
     res.status(200).json({
         status: true,
-        message: 'Hello World'
+        message: 'Hello World!'
     })
 })
 
