@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const PORT = 4000;
 app.use(bodyParser.json());
 
-app.post('/api', async (req, res) => {
+app.get('/api', async (req, res) => {
     res.status(200).json({
         status: true,
         message: 'Hello World!'
