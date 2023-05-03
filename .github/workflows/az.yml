@@ -15,4 +15,5 @@ jobs:
         app-name: munnebapp
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
         package: .
-        startup-command: "npm start"
+        deployment-script: deploy.sh
+        
