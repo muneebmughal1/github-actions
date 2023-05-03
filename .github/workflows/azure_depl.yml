@@ -48,7 +48,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'muneebapp'
+          app-name: 'my-nodejs-appservice'
           slot-name: 'Production'
           publish-profile: ${{ secrets.PUBLISH_PROFILE }}
           package: .
