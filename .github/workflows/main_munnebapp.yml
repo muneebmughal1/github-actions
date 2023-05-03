@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'munnebapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2857193EBDE04E6AAE60FD0CD2AD0D96 }}
+          publish-profile: ${{ secrets.PUBLISH_PROFILE }}
           package: .
