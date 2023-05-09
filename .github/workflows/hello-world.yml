@@ -1,0 +1,14 @@
+name: Hello-World
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  Hello-World:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: muneebmughal1/hello-world-action@hello-world
+
