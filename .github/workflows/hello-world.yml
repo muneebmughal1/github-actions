@@ -10,4 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: muneebmughal1/hello-world-action@hello-world-muneeb
+      - name: Hello world action step
+        id: hello
+        uses: muneebmughal1/hello-world-action@hello-world-new
+        with:
+          who-to-greet: 'Muneeb Mughal'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
