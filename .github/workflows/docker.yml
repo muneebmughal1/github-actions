@@ -1,16 +1,16 @@
-name: CI/CD
+# name: CI/CD
 
-on:
-  push:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
 
-jobs:
-  docker_push:
+# jobs:
+#   docker_push:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
-    - run: docker build . -t muneebmughal1/github-actions
-    - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USER}} --password-stdin
-    - run: docker push muneebmughal1/github-actions
+#     steps:
+#     - uses: actions/checkout@v3
+#     - run: docker build . -t muneebmughal1/github-actions
+#     - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USER}} --password-stdin
+#     - run: docker push muneebmughal1/github-actions

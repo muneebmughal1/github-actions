@@ -1,20 +1,20 @@
-name: Hello-World
+# name: Hello-World
 
-on:
-  push:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
 
-jobs:
-  Hello-World:
+# jobs:
+#   Hello-World:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Hello world action step
-        id: hello
-        uses: muneebmughal1/hello-world-action@hello-world-new
-        with:
-          who-to-greet: 'Muneeb Mughal'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+#     steps:
+#       - name: Hello world action step
+#         id: hello
+#         uses: muneebmughal1/hello-world-action@hello-world-new
+#         with:
+#           who-to-greet: 'Muneeb Mughal'
+#       # Use the output from the `hello` step
+#       - name: Get the output time
+#         run: echo "The time was ${{ steps.hello.outputs.time }}"

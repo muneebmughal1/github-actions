@@ -1,42 +1,42 @@
-name: Deploy to Elastic Beanstalk
+# name: Deploy to Elastic Beanstalk
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-env:
-  AWS_REGION: ${{ secrets.AWS_REGION }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  EB_APP_NAME: muneeb-node-app
-  EB_ENV_NAME: muneeb-node-env
+# env:
+#   AWS_REGION: ${{ secrets.AWS_REGION }}
+#   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#   EB_APP_NAME: muneeb-node-app
+#   EB_ENV_NAME: muneeb-node-env
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18.x
+#       - name: Install Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: 18.x
 
-      - name: Install dependencies
-        run: npm i
+#       - name: Install dependencies
+#         run: npm i
 
-      - name: Zip deployment package
-        run: zip -r deploy.zip . -x '*.git*'
+#       - name: Zip deployment package
+#         run: zip -r deploy.zip . -x '*.git*'
 
-      - name: Deploy to Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v14
-        with:
-          aws_access_key: ${{ env.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          application_name: ${{ env.EB_APP_NAME }}
-          environment_name: ${{ env.EB_ENV_NAME }}
-          region: ${{ env.AWS_REGION }}
-          version_label: Sample-${{ github.sha }}
-          deployment_package: deploy.zip
+#       - name: Deploy to Elastic Beanstalk
+#         uses: einaregilsson/beanstalk-deploy@v14
+#         with:
+#           aws_access_key: ${{ env.AWS_ACCESS_KEY_ID }}
+#           aws_secret_key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+#           application_name: ${{ env.EB_APP_NAME }}
+#           environment_name: ${{ env.EB_ENV_NAME }}
+#           region: ${{ env.AWS_REGION }}
+#           version_label: Sample-${{ github.sha }}
+#           deployment_package: deploy.zip
