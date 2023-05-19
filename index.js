@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.get('/api', async (req, res) => {
     res.status(200).json({
         status: true,
-        message: 'Hello World! From Muneeb Mughal.'
+        message: 'Hello World! I am simple express API and I am deployed using github actions and my infra was created using terraform'
     })
 })
 app.listen(PORT, () => {
